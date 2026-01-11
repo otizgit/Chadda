@@ -96,7 +96,7 @@ export default function SignupContainer() {
               icon="fluent:chat-multiple-28-filled"
               className="text-primary text-[1.6rem]"
             />
-            <p className="font-semibold text-[0.9rem] text-black">Chadda</p>
+            <p className="font-medium text-[0.9rem] text-black">Chadda</p>
           </div>
 
           <motion.h1
@@ -149,7 +149,7 @@ export default function SignupContainer() {
             </div>
             <div className="flex flex-col gap-1 mb-5">
               <label className="text-smaller font-medium" htmlFor="email">
-                Email address
+                Email
               </label>
               <input
                 required
