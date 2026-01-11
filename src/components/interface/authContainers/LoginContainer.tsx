@@ -71,7 +71,7 @@ export default function LoginContainer() {
   return (
     <main className="font-sans min-h-screen grid grid-cols-1 lg:grid-cols-2 bg-[#EFEEEC]">
       <div className="flex flex-col justify-center py-20">
-        <div className="w-[90%] md:w-[60%] xl:w-[50%] lg:w-[70%] mx-auto 2xl:w-100">
+        <div className="w-[90%] sm:w-[50%] md:w-[35%] lg:w-[70%] xl:w-[50%] mx-auto 2xl:w-100">
           <div className="plain-flex gap-2 mb-6 w-fit mx-auto">
             <Icon
               icon="fluent:chat-multiple-28-filled"
@@ -123,27 +123,16 @@ export default function LoginContainer() {
               />
 
               {errors.email && (
-                <p className="text-smaller text-red-500 mt-1">{errors.email}</p>
+                <p className="text-smallest font-medium text-red-500">{errors.email}</p>
               )}
             </div>
-            <div className="flex flex-col gap-1 mb-5">
+            <div className="flex flex-col gap-1 mb-2">
               <div className="custom-flex">
                 <label className="text-smaller font-medium" htmlFor="email">
                   Password
                 </label>
-                <button
-                  type="button"
-                  className="text-primary text-smaller font-medium"
-                >
-                  Forgot password?
-                </button>
               </div>
-              {errors.password && (
-                <p className="text-smaller text-red-500 mt-1">
-                  {errors.password}
-                </p>
-              )}
-              <div className="relative">
+              <div className="relative mb-1">
                 <input
                   required
                   type={passwordView ? "text" : "password"}
@@ -174,15 +163,27 @@ export default function LoginContainer() {
                   />
                 </button>
               </div>
+              {errors.password && (
+                <p className="text-smallest font-medium text-red-500">{errors.password}</p>
+              )}
+
+              <div className="flex justify-end">
+                <button
+                  type="button"
+                  className="text-primary text-smallest font-medium"
+                >
+                  Forgot password?
+                </button>
+              </div>
             </div>
 
-            <button className="btn-style button-shadow">
+            <button disabled={loading} className="btn-style button-shadow">
               <p className="text-small text-white font-medium">
                 {loading ? "Signing in..." : "Sign in "}
               </p>
               {loading && (
                 <Icon
-                  icon="line-md:loading-alt-loop"
+                  icon="line-md:loading-loop"
                   className="text-[1.2rem] text-white"
                 />
               )}
@@ -214,7 +215,10 @@ export default function LoginContainer() {
                 custom={1}
                 className="button-shadow2 btn-style2"
               >
-                <Icon icon="material-icon-theme:google" className="text-[1.2rem]" />
+                <Icon
+                  icon="material-icon-theme:google"
+                  className="text-[1.2rem]"
+                />
                 <p className="text-smaller font-medium text-black">Google</p>
               </motion.button>
               <motion.button

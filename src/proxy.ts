@@ -1,19 +1,25 @@
 import { NextResponse, NextRequest } from "next/server";
 
 const PROTECTED_ROUTES = ["/chats", "/settings", "/profile"];
+const AUTH_ROUTES = ["/login", "/signup"];
 
 export async function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
+  const sessionToken = req.cookies.get("session_token")?.value;
 
   const isProtected = PROTECTED_ROUTES.some((route) =>
     pathname.startsWith(route)
   );
+  const isAuthRoute = AUTH_ROUTES.some((route) => pathname.startsWith(route));
+
+  if (isAuthRoute && sessionToken) {
+    return NextResponse.redirect(new URL("/chats", req.url));
+  }
 
   if (!isProtected) {
     return NextResponse.next();
   }
 
-  const sessionToken = req.cookies.get("session_token")?.value;
   if (!sessionToken) {
     return NextResponse.redirect(new URL("/login", req.url));
   }
@@ -32,5 +38,12 @@ export async function proxy(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/chats", "/chats/:path*", "/settings/:path*", "/profile/:path*"],
+  matcher: [
+    "/login",
+    "/signup",
+    "/chats",
+    "/chats/:path*",
+    "/settings/:path*",
+    "/profile/:path*",
+  ],
 };

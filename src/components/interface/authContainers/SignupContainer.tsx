@@ -27,7 +27,7 @@ export default function SignupContainer() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    setLoading(true);
+    if (!errors) setLoading(true);
 
     const result = signupSchema.safeParse({
       displayName,
@@ -87,10 +87,13 @@ export default function SignupContainer() {
     }
   };
 
+  console.log(loading);
+  console.log(errors);
+
   return (
     <main className="font-sans min-h-screen grid grid-cols-1 lg:grid-cols-2 bg-[#EFEEEC]">
       <div className="flex flex-col justify-center py-20">
-        <div className="w-[90%] md:w-[60%] xl:w-[50%] lg:w-[70%] mx-auto 2xl:w-100">
+        <div className="w-[90%] sm:w-[50%] md:w-[35%] lg:w-[70%] xl:w-[50%] mx-auto 2xl:w-100">
           <div className="plain-flex gap-2 mb-6 w-fit mx-auto">
             <Icon
               icon="fluent:chat-multiple-28-filled"
@@ -142,7 +145,7 @@ export default function SignupContainer() {
               />
 
               {errors.displayName && (
-                <p className="text-smaller text-red-500 mt-1">
+                <p className="text-smallest font-medium text-red-500">
                   {errors.displayName}
                 </p>
               )}
@@ -163,7 +166,7 @@ export default function SignupContainer() {
               />
 
               {errors.email && (
-                <p className="text-smaller text-red-500 mt-1">{errors.email}</p>
+                <p className="text-smallest font-medium text-red-500">{errors.email}</p>
               )}
             </div>
             <div className="flex flex-col gap-1 mb-5">
@@ -200,7 +203,7 @@ export default function SignupContainer() {
               </div>
 
               {errors.password && (
-                <p className="text-smaller text-red-500 mt-1">
+                <p className="text-smallest font-medium text-red-500">
                   {errors.password}
                 </p>
               )}
@@ -241,13 +244,13 @@ export default function SignupContainer() {
               </div>
 
               {errors.confirmPassword && (
-                <p className="text-smaller text-red-500 mt-1">
+                <p className="text-smallest font-medium text-red-500">
                   {errors.confirmPassword}
                 </p>
               )}
             </div>
 
-            <button className="btn-style button-shadow">
+            <button disabled={loading} className="btn-style button-shadow">
               <p className="text-small text-white font-medium">
                 {loading ? "Creating account..." : "Create account"}
               </p>
@@ -285,7 +288,10 @@ export default function SignupContainer() {
                 custom={1}
                 className="button-shadow2 btn-style2"
               >
-                <Icon icon="akar-icons:google-fill" className="text-[1rem]" />
+                <Icon
+                  icon="material-icon-theme:google"
+                  className="text-[1rem]"
+                />
                 <p className="text-smaller font-medium text-black">Google</p>
               </motion.button>
               <motion.button
