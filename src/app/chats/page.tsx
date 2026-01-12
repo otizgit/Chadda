@@ -1,3 +1,12 @@
+import SideBar from "@/components/SideBar";
+
 export default async function page() {
-  return <div>hello world</div>;
+  return (
+    <div className="relative">
+      <div>
+        <SideBar />
+      </div>
+      <div></div>
+    </div>
+  );
 }
