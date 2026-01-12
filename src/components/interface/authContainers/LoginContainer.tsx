@@ -151,7 +151,7 @@ export default function LoginContainer() {
                   type="button"
                   aria-label={passwordView ? "Hide password" : "Show password"}
                   aria-pressed={passwordView}
-                  className="top-0 bottom-0 rounded-md grid place-items-center text-[1.2rem] absolute px-2 right-0"
+                  className="top-0 bottom-0 rounded-xl grid place-items-center text-[1.2rem] absolute px-2 right-0"
                 >
                   <Icon
                     className="text-black"

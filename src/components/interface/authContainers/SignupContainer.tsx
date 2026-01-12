@@ -189,7 +189,7 @@ export default function SignupContainer() {
                 <button
                   onClick={() => setPasswordView((prev) => !prev)}
                   type="button"
-                  className="top-0 bottom-0 rounded-md grid place-items-center text-[1.2rem] absolute px-2 right-0"
+                  className="top-0 bottom-0 rounded-xl grid place-items-center text-[1.2rem] absolute px-2 right-0"
                 >
                   <Icon
                     className="text-[#636363]"
@@ -230,7 +230,7 @@ export default function SignupContainer() {
                 <button
                   onClick={() => setConfirmPasswordView((prev) => !prev)}
                   type="button"
-                  className="top-0 bottom-0 rounded-md grid place-items-center text-[1.2rem] absolute px-2 right-0"
+                  className="top-0 bottom-0 rounded-xl grid place-items-center text-[1.2rem] absolute px-2 right-0"
                 >
                   <Icon
                     className="text-[#636363]"
