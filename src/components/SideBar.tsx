@@ -8,8 +8,8 @@ export default function SideBar() {
   const pathName = usePathname();
 
   return (
-    <section className="font-sans fixed top-0 left-0 bottom-0 p-2 z-3">
-      <div className="bg-[#E4E0DD] px-2 py-3 rounded-xl custom-flex flex-col h-full">
+    <section className="font-sans absolute top-0 left-0 bottom-0 p-3 z-4">
+      <div className="bg-[#E4E0DD] input-shadow px-2 py-3 rounded-xl custom-flex flex-col h-full">
         <div>
           <button className="plain-flex gap-2 mb-6 w-fit mx-auto">
             {/* <Icon
@@ -45,7 +45,7 @@ export default function SideBar() {
                     />
                   </Link>
 
-                  <p className="z-3 absolute text-text-color left-[calc(100%+0.7rem)] rounded-lg py-1 px-2 text-smallest bg-white shadow-sm top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
+                  <p className="z-3 absolute text-text-color left-[calc(100%+0.7rem)] rounded-lg py-1 px-2 text-smallest bg-white border-[0.15em] border-gray-300 shadow-sm top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
                     {iconData.helper}
                   </p>
                 </div>
@@ -80,7 +80,7 @@ export default function SideBar() {
                   />
                 </Link>
 
-                <p className="z-3 absolute text-text-color left-[calc(100%+0.7rem)] rounded-lg py-1 px-2 text-smallest bg-white shadow-sm top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
+                <p className="z-3 absolute text-text-color left-[calc(100%+0.7rem)] rounded-lg py-1 px-2 text-smallest bg-white border-[0.15em] border-gray-300 shadow-sm top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
                   {iconData.helper}
                 </p>
               </div>

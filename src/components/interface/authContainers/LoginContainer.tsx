@@ -77,7 +77,7 @@ export default function LoginContainer() {
               icon="fluent:chat-multiple-28-filled"
               className="text-primary text-[1.6rem]"
             />
-            <p className="font-medium text-[0.9rem] text-black">Chadda</p>
+            <p className="font-medium text-[0.9rem]">Chadda</p>
           </div>
 
           <motion.h1
@@ -87,7 +87,7 @@ export default function LoginContainer() {
               once: true,
             }}
             custom={0}
-            className="text-black text-center font-medium text-[1.2rem] mb-1"
+            className="text-center font-medium tracking-tight text-[1.2rem] mb-1"
           >
             Welcome back to Chadda
           </motion.h1>
@@ -98,14 +98,14 @@ export default function LoginContainer() {
               once: true,
             }}
             custom={0.5}
-            className="text-gray-600 mb-6 text-center text-smaller"
+            className="text-gray-600! mb-6 text-center text-smaller"
           >
             Sign in to continue your conversations.
           </motion.p>
 
           <form className="mb-3" onSubmit={handleSubmit}>
             <div className="flex flex-col gap-1 mb-5">
-              <label className="text-smaller font-medium" htmlFor="email">
+              <label className="text-text-color text-smaller font-medium" htmlFor="email">
                 Email
               </label>
               <input
@@ -123,12 +123,12 @@ export default function LoginContainer() {
               />
 
               {errors.email && (
-                <p className="text-smallest font-medium text-red-500">{errors.email}</p>
+                <p className="text-smallest font-medium text-red-500!">{errors.email}</p>
               )}
             </div>
             <div className="flex flex-col gap-1 mb-2">
               <div className="custom-flex">
-                <label className="text-smaller font-medium" htmlFor="email">
+                <label className="text-text-color text-smaller font-medium" htmlFor="email">
                   Password
                 </label>
               </div>
@@ -164,7 +164,7 @@ export default function LoginContainer() {
                 </button>
               </div>
               {errors.password && (
-                <p className="text-smallest font-medium text-red-500">{errors.password}</p>
+                <p className="text-smallest font-medium text-red-500!">{errors.password}</p>
               )}
 
               <div className="flex justify-end">
@@ -178,7 +178,7 @@ export default function LoginContainer() {
             </div>
 
             <button disabled={loading} className="btn-style button-shadow">
-              <p className="text-small text-white font-medium">
+              <p className="text-small text-white! font-medium">
                 {loading ? "Signing in..." : "Sign in "}
               </p>
               {loading && (
@@ -201,7 +201,7 @@ export default function LoginContainer() {
               className="flex items-center gap-3 mb-3"
             >
               <span className="input-shadow h-[0.08em] bg-[#e1e1e1] flex-1"></span>
-              <p className="text-smaller text-gray-600">or continue with</p>
+              <p className="text-smaller text-gray-600!">or continue with</p>
               <span className="input-shadow h-[0.08em] bg-[#e1e1e1] flex-1"></span>
             </motion.div>
 
@@ -219,7 +219,7 @@ export default function LoginContainer() {
                   icon="material-icon-theme:google"
                   className="text-[1.2rem]"
                 />
-                <p className="text-smaller font-medium text-black">Google</p>
+                <p className="text-smaller font-medium">Google</p>
               </motion.button>
               <motion.button
                 initial="init"
@@ -231,13 +231,13 @@ export default function LoginContainer() {
                 className="button-shadow2 btn-style2"
               >
                 <Icon icon="akar-icons:github-fill" className="text-[1.1rem]" />
-                <p className="text-smaller font-medium text-black">GitHub</p>
+                <p className="text-smaller font-medium">GitHub</p>
               </motion.button>
             </div>
           </div>
 
           <div>
-            <p className="text-center text-smaller text-gray-600">
+            <p className="text-center text-smaller text-gray-600!">
               Don't have an account?{" "}
               <span>
                 <Link
