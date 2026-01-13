@@ -1,64 +1,64 @@
 import { Icon } from "@iconify/react";
 import Link from "next/link";
+import sideBarData from "@/assets/data/sideBarData";
 
 export default function SideBar() {
   return (
-    <section className="bg-[#E4E0DD] fixed top-0 bottom-0 w-17 py-5 custom-flex flex-col">
-      <div>
-        <button className="plain-flex gap-2 mb-6 w-fit mx-auto">
-          <Icon
-            icon="fluent:chat-multiple-28-filled"
-            className="text-primary text-[1.9rem]"
-          />
-        </button>
+    <section className="font-sans fixed top-0 bottom-0 p-2">
+      <div className="bg-[#E4E0DD] px-2 py-3 rounded-xl custom-flex flex-col h-full">
+        <div>
+          <button className="plain-flex gap-2 mb-6 w-fit mx-auto">
+            <Icon
+              icon="fluent:chat-multiple-28-filled"
+              className="text-primary text-[1.9rem]"
+            />
+          </button>
+
+          <div>
+            {sideBarData.slice(0, 4).map((iconData) => {
+              return (
+                <div key={iconData.helper} className="relative group">
+                  <Link href={iconData.link} className="icon-style">
+                    <Icon
+                      icon={iconData.icon}
+                      className="text-black text-[1.2rem]"
+                    />
+                  </Link>
+
+                  <p className="absolute left-[calc(100%+0.7rem)] rounded-lg py-1 px-2 text-smallest bg-white shadow-sm top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
+                    {iconData.helper}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
 
         <div>
-          <button className="icon-style">
+          {sideBarData.slice(4).map((iconData) => {
+            return (
+              <div key={iconData.helper} className="relative group">
+                <Link href={iconData.link} className="icon-style">
+                  <Icon
+                    icon={iconData.icon}
+                    className="text-black text-[1.2rem]"
+                  />
+                </Link>
+
+                <p className="absolute left-[calc(100%+0.7rem)] rounded-lg py-1 px-2 text-smallest bg-white shadow-sm top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
+                  {iconData.helper}
+                </p>
+              </div>
+            );
+          })}
+
+          <Link href="/" className="icon-style mb-0">
             <Icon
-              icon="hugeicons:chat-feedback-01"
-              className="text-black text-[1.2rem]"
+              icon="solar:user-bold"
+              className="text-primary text-[1.2rem]"
             />
-          </button>
-          <button className="icon-style">
-            <Icon
-              icon="heroicons:user-group"
-              className="text-black text-[1.2rem]"
-            />
-          </button>
-          <button className="icon-style">
-            <Icon
-              icon="fluent:folder-32-regular"
-              className="text-black text-[1.2rem]"
-            />
-          </button>
-          <button className="icon-style">
-            <Icon
-              icon="solar:bookmark-linear"
-              className="text-black text-[1.2rem]"
-            />
-          </button>
+          </Link>
         </div>
-      </div>
-
-      <div>
-        <button className="icon-style">
-          <Icon
-            icon="fluent:person-feedback-48-regular"
-            className="text-black text-[1.4rem]"
-          />
-        </button>
-        <button className="icon-style">
-          <Icon
-            icon="hugeicons:settings-01"
-            className="text-black text-[1.2rem]"
-          />
-        </button>
-
-        <Link href="/">
-          <div className="icon-style bg-primary">
-            <Icon icon="solar:user-bold" className="text-white text-[1.2rem]" />
-          </div>
-        </Link>
       </div>
     </section>
   );
