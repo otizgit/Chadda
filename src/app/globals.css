@@ -77,7 +77,7 @@ h6 {
     @apply flex items-center justify-between;
   }
   .input-style {
-    @apply text-small placeholder:text-smaller placeholder:text-[#5b5b5b] p-2 px-3 rounded-[11px] bg-[#E4E0DD] border-[0.1em];
+    @apply text-small text-text-color placeholder:text-smaller placeholder:text-[#5b5b5b] p-2 px-3 rounded-[11px] bg-[#E4E0DD] border-[0.1em];
   }
   .btn-style {
     @apply w-full py-2 bg-primary border-[#27958a] flex gap-2 justify-center border-[0.1em] rounded-[11px];
