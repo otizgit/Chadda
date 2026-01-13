@@ -9,8 +9,10 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
-  --color-primary: #1dafa1;
-  --color-secondary: #0000ff;
+  --color-primary: #4a5fdc;
+  --color-secondary: #10b981;
+  --color-text-color: #1f2937;
+  --color-dark-grey: #e4e0dd;
 
   --text-medium: 0.85rem;
   --text-small: 0.8rem;
@@ -39,6 +41,7 @@ h4,
 h5,
 h6 {
   font-family: var(--font-sans);
+  color: var(--color-text-color);
 }
 
 .input-shadow {
@@ -53,6 +56,11 @@ h6 {
   box-shadow: 0 0.05em 1px rgba(96, 96, 96, 0.05),
     inset 0px -0.1em 0.1em rgba(255, 255, 255, 1),
     inset 0.1em 0.1em rgba(255, 255, 255, 1);
+}
+.button-shadow3 {
+  box-shadow: 0px 2px 0.15em rgba(96, 96, 96, 0.14),
+    inset 0.02em 0.1em rgba(255, 255, 255, 1);
+  border: 0.1em solid rgba(180, 180, 180, 0.371);
 }
 
 @layer components {
@@ -75,7 +83,7 @@ h6 {
     @apply w-full py-2 bg-primary border-[#27958a] flex gap-2 justify-center border-[0.1em] rounded-[11px];
   }
   .icon-style {
-    @apply gap-2 mb-3 w-9 h-9 grid place-items-center rounded-[11px];
+    @apply gap-2 mb-3 w-9 h-9 grid place-items-center rounded-[11px] hover:bg-primary/20 focus-within:bg-primary/20;
   }
   .btn-style2 {
     @apply flex justify-center gap-2 py-2 w-full border-[0.1em] border-[#dcdcdc] rounded-[11px];

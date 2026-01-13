@@ -1,8 +1,12 @@
+"use client";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 import sideBarData from "@/assets/data/sideBarData";
+import { usePathname } from "next/navigation";
 
 export default function SideBar() {
+  const pathName = usePathname();
+
   return (
     <section className="font-sans fixed top-0 bottom-0 p-2">
       <div className="bg-[#E4E0DD] px-2 py-3 rounded-xl custom-flex flex-col h-full">
@@ -10,7 +14,7 @@ export default function SideBar() {
           <button className="plain-flex gap-2 mb-6 w-fit mx-auto">
             <Icon
               icon="fluent:chat-multiple-28-filled"
-              className="text-primary text-[1.9rem]"
+              className="text-[#4A5FDC] text-[1.9rem]"
             />
           </button>
 
@@ -18,14 +22,29 @@ export default function SideBar() {
             {sideBarData.slice(0, 4).map((iconData) => {
               return (
                 <div key={iconData.helper} className="relative group">
-                  <Link href={iconData.link} className="icon-style">
+                  <Link
+                    href={iconData.link}
+                    className={`icon-style ${
+                      pathName.startsWith(iconData.link)
+                        ? "bg-primary/20 button-shadow3"
+                        : ""
+                    }`}
+                  >
                     <Icon
-                      icon={iconData.icon}
-                      className="text-black text-[1.2rem]"
+                      icon={
+                        pathName.startsWith(iconData.link)
+                          ? iconData.iconActive
+                          : iconData.icon
+                      }
+                      className={`text-[1.2rem] group-hover:text-primary group-focus-within:text-primary ${
+                        pathName.startsWith(iconData.link)
+                          ? "text-primary"
+                          : "text-text-color"
+                      }`}
                     />
                   </Link>
 
-                  <p className="absolute left-[calc(100%+0.7rem)] rounded-lg py-1 px-2 text-smallest bg-white shadow-sm top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
+                  <p className="absolute text-text-color left-[calc(100%+0.7rem)] rounded-lg py-1 px-2 text-smallest bg-white shadow-sm top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
                     {iconData.helper}
                   </p>
                 </div>
@@ -38,25 +57,37 @@ export default function SideBar() {
           {sideBarData.slice(4).map((iconData) => {
             return (
               <div key={iconData.helper} className="relative group">
-                <Link href={iconData.link} className="icon-style">
+                <Link
+                  href={iconData.link}
+                  className={`icon-style ${
+                    pathName.startsWith(iconData.link)
+                      ? "bg-primary/20 button-shadow3"
+                      : ""
+                  }`}
+                >
                   <Icon
-                    icon={iconData.icon}
-                    className="text-black text-[1.2rem]"
+                    icon={
+                      pathName.startsWith(iconData.link)
+                        ? iconData.iconActive
+                        : iconData.icon
+                    }
+                    className={`text-[1.2rem] group-hover:text-primary group-focus-within:text-primary ${
+                      pathName.startsWith(iconData.link)
+                        ? "text-primary"
+                        : "text-text-color"
+                    }`}
                   />
                 </Link>
 
-                <p className="absolute left-[calc(100%+0.7rem)] rounded-lg py-1 px-2 text-smallest bg-white shadow-sm top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
+                <p className="absolute text-text-color left-[calc(100%+0.7rem)] rounded-lg py-1 px-2 text-smallest bg-white shadow-sm top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
                   {iconData.helper}
                 </p>
               </div>
             );
           })}
 
-          <Link href="/" className="icon-style mb-0">
-            <Icon
-              icon="solar:user-bold"
-              className="text-primary text-[1.2rem]"
-            />
+          <Link href="/" className="icon-style mb-0 bg-primary">
+            <Icon icon="solar:user-bold" className="text-white text-[1.2rem]" />
           </Link>
         </div>
       </div>
