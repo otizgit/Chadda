@@ -1,3 +1,4 @@
+import MessagesAsideContainer from "@/components/interface/messages/MessagesAsideContainer";
 import SideBar from "@/components/SideBar";
 
 export default async function page() {
@@ -5,6 +6,7 @@ export default async function page() {
     <div className="relative">
       <div>
         <SideBar />
+        <MessagesAsideContainer />
       </div>
       <div></div>
     </div>

@@ -58,7 +58,7 @@ export default function LoginContainer() {
 
         console.log(data.message);
 
-        router.push("/chats");
+        router.push("/messages");
       }
     } catch (error) {
       console.error("Login error:", error);

@@ -75,7 +75,7 @@ export default function SignupContainer() {
 
         console.log(data.message);
 
-        router.push("/chats");
+        router.push("/messages");
       } else {
         throw Error("Signup failed");
       }

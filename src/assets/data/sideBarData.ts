@@ -2,7 +2,7 @@ const sideBarData = [
   {
     icon: "solar:chat-line-outline",
     iconActive: "solar:chat-line-bold",
-    link: "/chats",
+    link: "/messages",
     helper: "Messages",
   },
   {

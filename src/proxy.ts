@@ -1,6 +1,6 @@
 import { NextResponse, NextRequest } from "next/server";
 
-const PROTECTED_ROUTES = ["/chats", "/settings", "/profile"];
+const PROTECTED_ROUTES = ["/messages", "/settings", "/profile"];
 const AUTH_ROUTES = ["/login", "/signup"];
 
 export async function proxy(req: NextRequest) {
@@ -41,8 +41,8 @@ export const config = {
   matcher: [
     "/login",
     "/signup",
-    "/chats",
-    "/chats/:path*",
+    "/messages",
+    "/messages/:path*",
     "/settings/:path*",
     "/profile/:path*",
   ],
