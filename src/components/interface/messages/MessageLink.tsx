@@ -10,7 +10,7 @@ export default function MessageLink() {
         </div>
         <div>
           <h3 className="font-medium text-small">John Doe</h3>
-          <p className="text-small text-gray-600!">
+          <p className="text-smaller text-gray-600!">
             Hello man, how is it going?
           </p>
         </div>

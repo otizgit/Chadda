@@ -17,7 +17,7 @@ export default function MessagesLinkWrapper({
         <h2 className="text-small font-medium text-gray-600!">{title}</h2>
       </div>
 
-      <div className="flex flex-col gap-1 mb-5">
+      <div className="flex flex-col gap-1 mb-4">
         <MessageLink />
         <MessageLink />
         <MessageLink />

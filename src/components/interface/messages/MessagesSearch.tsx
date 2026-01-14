@@ -1,7 +1,7 @@
 import { Icon } from "@iconify/react";
 export default function MessagesSearch() {
   return (
-    <div className="relative mb-5">
+    <div className="relative">
       <label htmlFor="search">
         <Icon
           icon="uil:search"

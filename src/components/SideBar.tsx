@@ -8,8 +8,8 @@ export default function SideBar() {
   const pathName = usePathname();
 
   return (
-    <section className="font-sans absolute top-0 left-0 bottom-0 p-3 z-4">
-      <div className="bg-[#E4E0DD] input-shadow px-2 py-3 rounded-xl custom-flex flex-col h-full">
+    <section className="font-sans absolute top-0 left-0 bottom-0 z-4">
+      <div className="bg-dark-grey input-shadow px-2.5 py-5 custom-flex flex-col h-full">
         <div>
           <button className="plain-flex gap-2 mb-6 w-fit mx-auto">
             {/* <Icon
@@ -27,7 +27,7 @@ export default function SideBar() {
                     href={iconData.link}
                     className={`icon-style ${
                       pathName.startsWith(iconData.link)
-                        ? "bg-primary/15 input-shadow"
+                        ? "bg-primary/20"
                         : ""
                     }`}
                   >
@@ -37,7 +37,7 @@ export default function SideBar() {
                           ? iconData.iconActive
                           : iconData.icon
                       }
-                      className={`text-[1.1rem] group-hover:text-primary group-focus-within:text-primary ${
+                      className={`text-[1.2rem] group-hover:text-primary group-focus-within:text-primary ${
                         pathName.startsWith(iconData.link)
                           ? "text-primary"
                           : "text-text-color"
@@ -62,7 +62,7 @@ export default function SideBar() {
                   href={iconData.link}
                   className={`icon-style ${
                     pathName.startsWith(iconData.link)
-                      ? "bg-primary/15 input-shadow"
+                      ? "bg-primary/20"
                       : ""
                   }`}
                 >
@@ -72,7 +72,7 @@ export default function SideBar() {
                         ? iconData.iconActive
                         : iconData.icon
                     }
-                    className={`text-[1.1rem] group-hover:text-primary group-focus-within:text-primary ${
+                    className={`text-[1.2rem] group-hover:text-primary group-focus-within:text-primary ${
                       pathName.startsWith(iconData.link)
                         ? "text-primary"
                         : "text-text-color"
@@ -88,7 +88,7 @@ export default function SideBar() {
           })}
 
           <Link href="/" className="icon-style mb-0 bg-primary">
-            <Icon icon="solar:user-bold" className="text-white text-[1.1rem]" />
+            <Icon icon="solar:user-bold" className="text-white text-[1.2rem]" />
           </Link>
         </div>
       </div>

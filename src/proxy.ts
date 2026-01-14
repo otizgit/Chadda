@@ -13,7 +13,7 @@ export async function proxy(req: NextRequest) {
   const isAuthRoute = AUTH_ROUTES.some((route) => pathname.startsWith(route));
 
   if (isAuthRoute && sessionToken) {
-    return NextResponse.redirect(new URL("/chats", req.url));
+    return NextResponse.redirect(new URL("/messages", req.url));
   }
 
   if (!isProtected) {
