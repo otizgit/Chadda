@@ -16,7 +16,7 @@ export default function SideBar() {
               icon="fluent:chat-multiple-28-filled"
               className="text-[#4A5FDC] text-[1.9rem]"
             /> */}
-            <p className="font-semibold text-[0.9rem] text-primary!">Logo</p>
+            <p className="font-semibold text-[0.9rem] text-primary! italic">Logo</p>
           </button>
 
           <div>

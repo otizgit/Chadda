@@ -16,6 +16,9 @@ export default async function page() {
       <div className="flex-1 bg-background ml-1 flex">
         <MessageContainer />
       </div>
+      
+      {/* <div className="w-80 bg-background">
+      </div> */}
     </div>
   );
 }
