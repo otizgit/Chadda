@@ -4,7 +4,7 @@ import Link from "next/link";
 import sideBarData from "@/assets/data/sideBarData";
 import { usePathname } from "next/navigation";
 
-export default function SideBar() {
+export default function NavSideBar() {
   const pathName = usePathname();
 
   return (
@@ -16,7 +16,9 @@ export default function SideBar() {
               icon="fluent:chat-multiple-28-filled"
               className="text-[#4A5FDC] text-[1.9rem]"
             /> */}
-            <p className="font-semibold text-[0.9rem] text-primary! italic">Logo</p>
+            <p className="font-semibold text-[0.9rem] text-primary! italic">
+              Logo
+            </p>
           </button>
 
           <div>
@@ -87,8 +89,11 @@ export default function SideBar() {
             );
           })}
 
-          <Link href="/" className="icon-style mb-0 bg-primary">
-            <Icon icon="solar:user-bold" className="text-background text-[1.2rem]" />
+          <Link href="/" className="icon-style rounded-full mb-0 bg-primary">
+            <Icon
+              icon="solar:user-bold"
+              className="text-background text-[1.2rem]"
+            />
           </Link>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react";
-export default function MessagesSearch() {
+
+export default function UserSearch() {
   return (
     <div className="relative">
       <label htmlFor="search">
@@ -12,7 +13,7 @@ export default function MessagesSearch() {
         id="search"
         type="text"
         className="input-style bg-light-grey border-none w-full pl-7"
-        placeholder="Search..."
+        placeholder="Search users..."
       />
     </div>
   );

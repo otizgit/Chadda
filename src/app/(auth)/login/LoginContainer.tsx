@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Icon } from "@iconify/react";
 import { motion } from "motion/react";
 import Link from "next/link";
-import IllustrationContainer from "./IllustrationContainer";
+import IllustrationContainer from "../_components/IllustrationContainer";
 import { loginSchema } from "../../../../lib/validation/auth";
 import { useRouter } from "next/navigation";
 
