@@ -11,7 +11,7 @@ export default function MessagesSearch() {
       <input
         id="search"
         type="text"
-        className="input-style border-[#d3d3d3] input-shadow w-full pl-7"
+        className="input-style bg-light-grey border-none w-full pl-7"
         placeholder="Search..."
       />
     </div>

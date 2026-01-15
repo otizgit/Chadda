@@ -8,8 +8,8 @@ export default function SideBar() {
   const pathName = usePathname();
 
   return (
-    <section className="font-sans absolute top-0 left-0 bottom-0 z-4">
-      <div className="bg-dark-grey input-shadow px-2.5 py-5 custom-flex flex-col h-full">
+    <section className="font-sans absolute top-0 left-0 bottom-0 border-r-[0.1em] border-[#e1e1e1] z-4">
+      <div className="bg-subtle-grey input-shadow px-2 py-5 custom-flex flex-col h-full">
         <div>
           <button className="plain-flex gap-2 mb-6 w-fit mx-auto">
             {/* <Icon
@@ -27,7 +27,7 @@ export default function SideBar() {
                     href={iconData.link}
                     className={`icon-style ${
                       pathName.startsWith(iconData.link)
-                        ? "bg-primary/20"
+                        ? "bg-background shadow-sm"
                         : ""
                     }`}
                   >
@@ -37,7 +37,7 @@ export default function SideBar() {
                           ? iconData.iconActive
                           : iconData.icon
                       }
-                      className={`text-[1.2rem] group-hover:text-primary group-focus-within:text-primary ${
+                      className={`text-[1.3rem] group-hover:text-primary group-focus-within:text-primary ${
                         pathName.startsWith(iconData.link)
                           ? "text-primary"
                           : "text-text-color"
@@ -45,7 +45,7 @@ export default function SideBar() {
                     />
                   </Link>
 
-                  <p className="z-3 absolute text-text-color left-[calc(100%+0.7rem)] rounded-lg py-1 px-2 text-smallest bg-white border-[0.15em] border-gray-300 shadow-sm top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
+                  <p className="z-3 absolute text-text-color left-[calc(100%+0.7rem)] rounded-lg py-1 px-2 text-smallest bg-background border-[0.15em] border-gray-300 shadow-sm top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
                     {iconData.helper}
                   </p>
                 </div>
@@ -62,7 +62,7 @@ export default function SideBar() {
                   href={iconData.link}
                   className={`icon-style ${
                     pathName.startsWith(iconData.link)
-                      ? "bg-primary/20"
+                      ? "bg-background shadow-sm"
                       : ""
                   }`}
                 >
@@ -72,7 +72,7 @@ export default function SideBar() {
                         ? iconData.iconActive
                         : iconData.icon
                     }
-                    className={`text-[1.2rem] group-hover:text-primary group-focus-within:text-primary ${
+                    className={`text-[1.3rem] group-hover:text-primary group-focus-within:text-primary ${
                       pathName.startsWith(iconData.link)
                         ? "text-primary"
                         : "text-text-color"
@@ -80,7 +80,7 @@ export default function SideBar() {
                   />
                 </Link>
 
-                <p className="z-3 absolute text-text-color left-[calc(100%+0.7rem)] rounded-lg py-1 px-2 text-smallest bg-white border-[0.15em] border-gray-300 shadow-sm top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
+                <p className="z-3 absolute text-text-color left-[calc(100%+0.7rem)] rounded-lg py-1 px-2 text-smallest bg-background border-[0.15em] border-gray-300 shadow-sm top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
                   {iconData.helper}
                 </p>
               </div>
@@ -88,7 +88,7 @@ export default function SideBar() {
           })}
 
           <Link href="/" className="icon-style mb-0 bg-primary">
-            <Icon icon="solar:user-bold" className="text-white text-[1.2rem]" />
+            <Icon icon="solar:user-bold" className="text-background text-[1.2rem]" />
           </Link>
         </div>
       </div>

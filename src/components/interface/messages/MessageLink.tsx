@@ -5,8 +5,8 @@ export default function MessageLink() {
     <Link href="/" className="custom-flex gap-2 px-2 py-2 rounded-[11px]">
       <div className="plain-flex gap-3">
         <div className="relative">
-          <div className="w-10 h-10 rounded-full bg-primary"></div>
-          <div className="absolute -right-0.5 bottom-1 w-3 border-[0.1em] border-[#efeeec] h-3 rounded-full bg-secondary"></div>
+          <div className="w-8 h-8 rounded-full bg-linear-0 from-red-500 to-blue-500"></div>
+          <div className="absolute -right-0.5 bottom-1 w-2.5 h-2.5 border-[0.1em] border-background rounded-full bg-secondary"></div>
         </div>
         <div>
           <h3 className="font-medium text-small">John Doe</h3>

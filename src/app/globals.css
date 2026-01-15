@@ -13,7 +13,8 @@
   --color-secondary: #10b981;
   --color-text-color: #1f2937;
   --color-dark-grey: #e4e0dd;
-  --color-light-grey: #fefefe;
+  --color-subtle-grey: #f0f2f5;
+  --color-light-grey: #efeeec;
 
   --text-medium: 0.85rem;
   --text-small: 0.8rem;
@@ -84,7 +85,7 @@ h6 {
     @apply w-full py-2 bg-primary border-[#4859bc] flex gap-2 justify-center border-[0.1em] rounded-[11px];
   }
   .icon-style {
-    @apply gap-2 mb-3 w-9 h-9 grid place-items-center rounded-[11px] hover:bg-primary/20 focus-within:bg-primary/20;
+    @apply gap-2 mb-3 w-10 h-10 grid place-items-center rounded-[11px] hover:bg-background focus-within:bg-background hover:shadow-sm focus-within:shadow-sm;
   }
   .btn-style2 {
     @apply flex justify-center gap-2 py-2 w-full border-[0.1em] border-[#dcdcdc] rounded-[11px];

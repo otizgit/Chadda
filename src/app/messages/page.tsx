@@ -5,7 +5,7 @@ import SideBar from "@/components/SideBar";
 export default async function page() {
   return (
     <div className="flex min-h-screen max-width overflow-hidden fixed inset-0 bg-background">
-      <div className="w-16 shrink-0 overflow-y-auto">
+      <div className="w-14 shrink-0 overflow-y-auto">
         <SideBar />
       </div>
 
@@ -13,7 +13,7 @@ export default async function page() {
         <MessagesAsideContainer />
       </div>
 
-      <div className="flex-1 bg-dark-grey overflow-y-auto ml-1 mt-14 rounded-tl-4xl">
+      <div className="flex-1 bg-background ml-1 flex">
         <MessageContainer />
       </div>
     </div>

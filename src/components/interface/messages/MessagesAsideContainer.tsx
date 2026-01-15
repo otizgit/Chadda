@@ -4,8 +4,8 @@ import MessagesLinkWrapper from "./MessagesLinkWrapper";
 
 export default function MessagesAsideContainer() {
   return (
-    <div className="pb-4 font-sans overflow-x-auto">
-      <div className="sticky bg-background top-0 z-3 pt-4 px-4 pb-5">
+    <div className="pb-4 font-sans">
+      <div className="bg-background z-3 pt-4 px-4 pb-5">
         <div className="custom-flex gap-3 mb-1.5">
           <h1 className="text-[1.2rem] font-semibold tracking-tight">
             Messages
@@ -23,11 +23,11 @@ export default function MessagesAsideContainer() {
       <div className="px-4">
         <MessagesLinkWrapper title="Pinned messages" icon="hugeicons:pin" />
 
-        <div className="mb-4 input-shadow h-[0.08em] bg-[#e1e1e1] flex-1"></div>
+        {/* <div className="mb-4 input-shadow h-[0.08em] bg-[#e1e1e1] flex-1"></div> */}
 
         <MessagesLinkWrapper
           title="All messages"
-          icon="fluent:chat-multiple-24-regular"
+          icon="qlementine-icons:inbox-16"
         />
       </div>
     </div>
