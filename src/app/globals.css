@@ -10,6 +10,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
   --color-primary: #4a5fdc;
+  /* --color-primary: #33b7aa; */
   --color-secondary: #10b981;
   --color-text-color: #1f2937;
   --color-dark-grey: #e4e0dd;

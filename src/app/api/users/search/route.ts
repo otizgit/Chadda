@@ -1,7 +1,7 @@
 export const runtime = "nodejs";
 import { NextResponse } from "next/server";
-import { prisma } from "../../../../lib/prisma";
-import { getCurrentUser } from "../../../../lib/auth/getCurrentUser";
+import { prisma } from "../../../../../lib/prisma";
+import { getCurrentUser } from "../../../../../lib/auth/getCurrentUser";
 
 export async function GET(req: Request) {
   const user = await getCurrentUser();
