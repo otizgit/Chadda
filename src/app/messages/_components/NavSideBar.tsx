@@ -9,7 +9,7 @@ export default function NavSideBar() {
 
   return (
     <section className="font-sans absolute top-0 left-0 bottom-0 border-r-[0.1em] border-[#e1e1e1] z-4">
-      <div className="bg-subtle-grey input-shadow px-2 py-5 custom-flex flex-col h-full">
+      <div className="bg-[#EDEDED] input-shadow px-2 py-5 custom-flex flex-col h-full">
         <div>
           <button className="plain-flex gap-2 mb-6 w-fit mx-auto">
             {/* <Icon

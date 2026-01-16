@@ -1,3 +1,4 @@
+"use client";
 import { Icon } from "@iconify/react";
 
 export default function UserSearch() {
@@ -13,7 +14,7 @@ export default function UserSearch() {
         id="search"
         type="text"
         className="input-style bg-light-grey border-none w-full pl-7"
-        placeholder="Search users..."
+        placeholder="Search for users..."
       />
     </div>
   );
