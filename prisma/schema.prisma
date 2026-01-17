@@ -64,6 +64,8 @@ model Message {
 
   sender          User          @relation(fields: [senderId], references: [id], onDelete: Cascade)
   conversation    Conversation  @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  
+  @@index([conversationId])
 }
 
 model Session {

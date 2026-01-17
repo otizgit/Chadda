@@ -79,7 +79,7 @@ export default function ConversationList() {
       })}
 
       {conversations.length === 0 && (
-        <p className="p-4 text-sm text-gray-500!">No conversations yet</p>
+        <p className="text-center text-smaller text-gray-500!">No conversations yet</p>
       )}
     </div>
   );
