@@ -9,7 +9,7 @@ export default function layout({ children }: { children: ReactNode }) {
         <NavSideBar />
       </div>
 
-      <div className="w-80 shrink-0 overflow-y-auto">
+      <div className="w-80 shrink-0 overflow-y-auto overflow-x-hidden">
         <ConversationPanel />
       </div>
 
