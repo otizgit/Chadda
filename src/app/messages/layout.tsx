@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import NavSideBar from "../../components/layout/NavSideBar";
 import ConversationPanel from "../../components/messages/ConversationPanel";
+import UserSearchModal from "@/components/layout/UserSearchModal";
 
 export default function layout({ children }: { children: ReactNode }) {
   return (
@@ -13,11 +14,9 @@ export default function layout({ children }: { children: ReactNode }) {
         <ConversationPanel />
       </div>
 
-      <div className="flex-1 bg-background ml-1 flex">
-        {children}
-        {/* <MessageContainer /> */}
-      </div>
+      <div className="flex-1 bg-background ml-1 flex">{children}</div>
 
+      <UserSearchModal />
       {/* <div className="w-80 bg-background">
           </div> */}
     </div>
