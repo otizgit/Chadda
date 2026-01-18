@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 import { useModalStore } from "@/store/useModalStore";
+import { useRouter } from "next/navigation";
 
 type User = {
   id: string;
@@ -16,6 +17,8 @@ export default function UserSearch() {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<User[]>([]);
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
+
   const toggle = useModalStore((state) => state.toggle);
 
   useEffect(() => {
@@ -39,6 +42,29 @@ export default function UserSearch() {
 
     return () => clearTimeout(timeout);
   }, [query]);
+
+  const handleUserClick = async (userId: string) => {
+    try {
+      const res = await fetch("/api/conversations", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/jsn",
+        },
+        body: JSON.stringify({ userId }),
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to create conversation");
+      }
+      const conversation = await res.json();
+
+      router.push(`/messages/${conversation.id}`);
+    } catch (err) {
+      console.log("Conversation error", err);
+    } finally {
+      toggle();
+    }
+  };
 
   return (
     <div className="relative">
@@ -78,9 +104,8 @@ export default function UserSearch() {
                 .join("");
 
               return (
-                <Link
-                  onClick={toggle}
-                  href={`/messages/${user.id}`}
+                <button
+                  onClick={() => handleUserClick(user.id)}
                   key={user.id}
                   className="w-full flex items-center gap-3 px-3 py-2 button-shadow2 border-[0.1em] hover:border-primary focus:border-primary transition-all duration-200 border-[#dcdcdc] rounded-[11px] text-left"
                 >
@@ -107,7 +132,7 @@ export default function UserSearch() {
                       @{user.username}
                     </p>
                   </div>
-                </Link>
+                </button>
               );
             })}
           </div>

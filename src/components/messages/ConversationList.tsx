@@ -79,7 +79,9 @@ export default function ConversationList() {
       })}
 
       {conversations.length === 0 && (
-        <p className="text-center text-smaller text-gray-500!">No conversations yet</p>
+        <p className="text-center text-small text-gray-500!">
+          No conversations yet
+        </p>
       )}
     </div>
   );
