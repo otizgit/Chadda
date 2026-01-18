@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
-import NavSideBar from "./_components/NavSideBar";
-import ConversationPanel from "./_components/ConversationPanel";
+import NavSideBar from "../../components/layout/NavSideBar";
+import ConversationPanel from "../../components/messages/ConversationPanel";
 
 export default function layout({ children }: { children: ReactNode }) {
   return (

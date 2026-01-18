@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
+import Link from "next/link";
 
 type User = {
   id: string;
@@ -61,12 +62,10 @@ export default function UserSearch() {
       {results.length > 0 && (
         <div className="absolute z-10 mt-2 p-1 w-full flex flex-col gap-2 rounded-lg border-[0.1em] border-[#e1e1e1] bg-white shadow">
           {results.map((user) => (
-            <button
+            <Link
+              href={`/messages/${user.id}`}
               key={user.id}
               className="w-full flex items-center gap-3 rounded-[7px] px-3 py-2 hover:bg-gray-100 focus:bg-gray-100 text-left"
-              onClick={() => {
-                console.log("Start chat with", user);
-              }}
             >
               <div className="w-8 h-8 rounded-full bg-gray-200 overflow-hidden">
                 {user.image && (
@@ -83,7 +82,7 @@ export default function UserSearch() {
                 <p className="text-small font-medium">{user.displayName}</p>
                 <p className="text-smallest text-gray-500!">@{user.username}</p>
               </div>
-            </button>
+            </Link>
           ))}
         </div>
       )}
