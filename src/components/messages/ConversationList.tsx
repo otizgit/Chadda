@@ -39,18 +39,18 @@ export default function ConversationList() {
   }, []);
 
   if (loading) {
-    return <p className="p-4 text-sm text-gray-500">Loading chats...</p>;
+    return <p className="p-4 text-sm text-gray-600!">Loading chats...</p>;
   }
 
   return (
-    <div className="flex flex-col divide-y">
+    <div className="flex flex-col gap-3">
       {conversations.map((conversation) => {
         const otherParticipant = conversation.participants[0].user;
 
         return (
           <button
             key={conversation.id}
-            className="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 text-left"
+            className="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 text-left w-full"
             onClick={() => {
               console.log("Open conversation", conversation.id);
             }}

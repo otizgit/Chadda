@@ -10,7 +10,7 @@ export default function ConversationPanel() {
 
   return (
     <div className="pb-4 font-sans">
-      <div className="bg-background pt-4 px-4 pr-3 pb-5">
+      <div className="bg-background pt-4 px-4 pr-3">
         <div className="custom-flex gap-3 mb-3">
           <h1 className="text-[1.2rem] font-semibold tracking-tight">
             Messages
