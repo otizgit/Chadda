@@ -91,7 +91,7 @@ export default function SignupContainer() {
   console.log(errors);
 
   return (
-    <main className="font-sans min-h-screen grid grid-cols-1 lg:grid-cols-2 bg-[#EFEEEC]">
+    <main className="font-sans min-h-screen grid grid-cols-1 lg:grid-cols-2 bg-light-grey">
       <div className="flex flex-col justify-center py-20">
         <div className="w-[90%] sm:w-[50%] md:w-[35%] lg:w-[70%] xl:w-[50%] mx-auto 2xl:w-100">
           <div className="plain-flex gap-2 mb-6 w-fit mx-auto">

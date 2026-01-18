@@ -2,11 +2,11 @@
 import { Icon } from "@iconify/react";
 import UserSearch from "./UserSearch";
 import ConversationList from "./ConversationList";
-import { useUserSearchModalStore } from "@/store/useUserSearchModalStore";
+import { useModalStore } from "@/store/useModalStore";
 
 export default function ConversationPanel() {
-  const toggle = useUserSearchModalStore((state) => state.toggle);
-  const isOpen = useUserSearchModalStore((state) => state.isOpen);
+  const toggle = useModalStore((state) => state.toggle);
+  const isOpen = useModalStore((state) => state.isOpen);
 
   return (
     <div className="pb-4 font-sans">

@@ -5,7 +5,7 @@ type ModalState = {
   toggle: () => void;
 };
 
-export const useUserSearchModalStore = create<ModalState>((set) => ({
+export const useModalStore = create<ModalState>((set) => ({
   isOpen: false,
 
   toggle: () =>
