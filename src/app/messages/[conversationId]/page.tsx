@@ -12,9 +12,10 @@ export default async function page({
   if (!user) return null;
 
   return (
-    <div className="flex flex-col w-full h-full">
+    <div className="font-sans flex flex-col w-full h-full relative">
       <div className="h-14.5 flex items-center">{/* <Header /> */}</div>
-      <div className="flex-1 bg-light-grey border-[#e1e1e1] border-[0.1em] rounded-tl-2xl overflow-y-auto">
+
+      <div className="h-[calc(100%-3.625rem)] bg-light-grey border-[#e1e1e1] border-[0.1em] rounded-tl-2xl overflow-y-auto">
         <MessageList conversationId={conversationId} currentUserId={user.id} />
 
         <MessageInput conversationId={conversationId} />

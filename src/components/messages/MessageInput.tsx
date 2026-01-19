@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { Icon } from "@iconify/react";
 
 type MessageInputProps = {
   conversationId: string;
@@ -39,21 +40,36 @@ export default function MessageInput({ conversationId }: MessageInputProps) {
   return (
     <form
       onSubmit={sendMessage}
-      className="border-t p-3 flex items-center gap-2"
+      className="absolute bottom-0 left-0 right-0 pb-4"
     >
-      <input
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-        placeholder="Type a message..."
-        className="flex-1 rounded-full border px-4 py-2 text-sm focus:outline-none"
-      />
+      <div className="mb-4 input-shadow h-[0.08em] bg-[#e1e1e1] flex-1"></div>
 
-      <button
-        disabled={loading}
-        className="bg-blue-500 text-white px-4 py-2 rounded-full text-sm"
-      >
-        Send
-      </button>
+      <div className="px-3 flex items-center gap-2">
+        <button
+          disabled={loading}
+          className="px-3 py-2.5 btn-style2 w-fit"
+        >
+          <Icon
+            icon="mage:image-upload"
+            className="text-[1.6rem] text-text-color"
+          />
+        </button>
+
+        <textarea
+          rows={1}
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          placeholder="Type a message..."
+          className="resize-none input-style flex-1 input-shadow border-[#d3d3d3] py-3"
+        />
+
+        <button
+          disabled={loading}
+          className="px-3 py-2.5 rounded-[11px] bg-primary btn-style w-fit"
+        >
+          <Icon icon="basil:send-solid" className="text-[1.4rem] text-white" />
+        </button>
+      </div>
     </form>
   );
 }
