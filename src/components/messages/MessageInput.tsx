@@ -47,11 +47,11 @@ export default function MessageInput({ conversationId }: MessageInputProps) {
       <div className="px-3 flex items-center gap-2">
         <button
           disabled={loading}
-          className="px-3 py-2.5 btn-style2 w-fit"
+          className="px-3 py-2.5 btn-style2 button-shadow2 w-fit"
         >
           <Icon
             icon="mage:image-upload"
-            className="text-[1.6rem] text-text-color"
+            className="text-[1.6rem] text-primary"
           />
         </button>
 
@@ -60,12 +60,12 @@ export default function MessageInput({ conversationId }: MessageInputProps) {
           value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder="Type a message..."
-          className="resize-none input-style flex-1 input-shadow border-[#d3d3d3] py-3"
+          className="resize-none input-style placeholder:text-small flex-1 input-shadow border-[#d3d3d3] py-3"
         />
 
         <button
           disabled={loading}
-          className="px-3 py-2.5 rounded-[11px] bg-primary btn-style w-fit"
+          className="px-3 py-2.5 rounded-[11px] bg-primary btn-style button-shadow w-fit"
         >
           <Icon icon="basil:send-solid" className="text-[1.4rem] text-white" />
         </button>

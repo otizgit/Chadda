@@ -80,7 +80,7 @@ export default function UserSearch() {
           type="text"
           autoComplete="false"
           onChange={(e) => setQuery(e.target.value)}
-          className="input-style input-shadow border-[#d3d3d3] w-full pl-7"
+          className="input-style input-shadow placeholder:text-small border-[#d3d3d3] w-full pl-8 py-2.5 text-[0.9rem]"
           placeholder="Search users..."
         />
       </div>

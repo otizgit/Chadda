@@ -39,7 +39,7 @@ export default function ConversationSearch() {
   }, [query]);
 
   return (
-    <div className="relative">
+    <div className="relative mb-5">
       <div className="relative">
         <label htmlFor="search">
           <Icon
@@ -52,8 +52,8 @@ export default function ConversationSearch() {
           type="text"
           autoComplete="false"
           onChange={(e) => setQuery(e.target.value)}
-          className="input-style bg-light-grey border-none w-full pl-7"
-          placeholder="Search users..."
+          className="input-style bg-light-grey placeholder:text-small border-none w-full pl-8 py-2.5 text-[0.9rem]"
+          placeholder="Search conversations..."
         />
       </div>
 

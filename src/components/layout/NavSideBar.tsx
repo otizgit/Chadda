@@ -89,7 +89,7 @@ export default function NavSideBar() {
             );
           })}
 
-          <Link href="/" className="icon-style rounded-full mb-0 bg-primary">
+          <Link href="/" className="icon-style rounded-full mb-0 bg-primary btn-style button-shadow">
             <Icon
               icon="solar:user-bold"
               className="text-background text-[1.2rem]"

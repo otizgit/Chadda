@@ -1,8 +1,8 @@
 "use client";
 import { Icon } from "@iconify/react";
-import UserSearch from "./UserSearch";
 import ConversationList from "./ConversationList";
 import { useModalStore } from "@/store/useModalStore";
+import ConversationSearch from "./ConversationSearch";
 
 export default function ConversationPanel() {
   const toggle = useModalStore((state) => state.toggle);
@@ -30,7 +30,8 @@ export default function ConversationPanel() {
             </p>
           </button>
         </div>
-        <UserSearch />
+
+        <ConversationSearch />
       </div>
 
       <div className="px-4">
