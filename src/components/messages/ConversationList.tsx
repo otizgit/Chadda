@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 type User = {
   id: string;
@@ -48,8 +49,9 @@ export default function ConversationList() {
         const otherParticipant = conversation.participants[0].user;
 
         return (
-          <button
+          <Link
             key={conversation.id}
+            href={`/messages/${conversation.id}`}
             className="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 text-left w-full"
             onClick={() => {
               console.log("Open conversation", conversation.id);
@@ -74,7 +76,7 @@ export default function ConversationList() {
                 @{otherParticipant.username}
               </p>
             </div>
-          </button>
+          </Link>
         );
       })}
 
