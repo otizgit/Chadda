@@ -30,15 +30,15 @@ export default function MessageBubble({
     >
       <div
         className={clsx(
-          "max-w-[70%] rounded-[11px] px-3 py-2",
+          "max-w-[70%] rounded-xl px-3 py-2",
           isMine
-            ? "bg-blue-500 text-white rounded-br-none"
+            ? "bg-primary text-white rounded-br-none"
             : "bg-gray-200 text-black rounded-bl-none",
         )}
       >
-        <p>{message.content}</p>
+        <p className="text-white! text-small">{message.content}</p>
 
-        <span className="block text-[10px] mt-1 opacity-70 text-right">
+        <span className="block text-smaller mt-1 opacity-70 text-right">
           {new Date(message.createdAt).toLocaleTimeString([], {
             hour: "2-digit",
             minute: "2-digit",

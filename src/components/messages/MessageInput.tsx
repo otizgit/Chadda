@@ -40,10 +40,8 @@ export default function MessageInput({ conversationId }: MessageInputProps) {
   return (
     <form
       onSubmit={sendMessage}
-      className="absolute bottom-0 left-0 right-0 pb-4"
+      className="absolute border-[#e1e1e1] border-l-[0.1em] border-t-[0.1em] bottom-0 left-0 right-0 py-4 bg-background"
     >
-      <div className="mb-4 input-shadow h-[0.08em] bg-[#e1e1e1] flex-1"></div>
-
       <div className="px-3 flex items-center gap-2">
         <button
           disabled={loading}
@@ -55,12 +53,11 @@ export default function MessageInput({ conversationId }: MessageInputProps) {
           />
         </button>
 
-        <textarea
-          rows={1}
+        <input
           value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder="Type a message..."
-          className="resize-none input-style placeholder:text-small flex-1 input-shadow border-[#d3d3d3] py-3"
+          className="resize-none input-style bg-light-grey placeholder:text-small flex-1 border-[#d3d3d3] py-3"
         />
 
         <button

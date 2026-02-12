@@ -39,7 +39,7 @@ export default function ConversationSearch() {
   }, [query]);
 
   return (
-    <div className="relative mb-5">
+    <div className="relative mb-3">
       <div className="relative">
         <label htmlFor="search">
           <Icon

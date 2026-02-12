@@ -52,7 +52,7 @@ export default function ConversationList() {
           <Link
             key={conversation.id}
             href={`/messages/${conversation.id}`}
-            className="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 text-left w-full"
+            className="flex items-center rounded-[11px] gap-3 px-3 py-2 hover:bg-gray-100 text-left w-full"
             onClick={() => {
               console.log("Open conversation", conversation.id);
             }}
@@ -69,10 +69,10 @@ export default function ConversationList() {
             </div>
 
             <div>
-              <p className="text-sm font-medium">
+              <p className="text-small font-medium">
                 {otherParticipant.displayName}
               </p>
-              <p className="text-xs text-gray-500">
+              <p className="text-smallest text-gray-500!">
                 @{otherParticipant.username}
               </p>
             </div>
