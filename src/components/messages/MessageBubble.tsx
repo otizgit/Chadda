@@ -38,7 +38,7 @@ export default function MessageBubble({
       >
         <p className="text-white! text-small">{message.content}</p>
 
-        <span className="block text-smaller mt-1 opacity-70 text-right">
+        <span className="block text-smaller mt-1 opacity-70 text-right font-medium">
           {new Date(message.createdAt).toLocaleTimeString([], {
             hour: "2-digit",
             minute: "2-digit",
