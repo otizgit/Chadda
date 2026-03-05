@@ -12,8 +12,21 @@ export async function POST(req: Request) {
 
   const { conversationId, content } = await req.json();
 
-  if (!conversationId || !content?.trim()) {
+  if (typeof conversationId !== "string" || typeof content !== "string") {
     return NextResponse.json({ message: "Invalid payload" }, { status: 400 });
+  }
+
+  const trimmedContent = content.trim();
+
+  if (trimmedContent.length === 0) {
+    return NextResponse.json(
+      { message: "Message cannot be empty" },
+      { status: 400 },
+    );
+  }
+
+  if (trimmedContent.length > 2000) {
+    return NextResponse.json({ message: "Message too long" }, { status: 400 });
   }
 
   const conversation = await prisma.conversation.findFirst({
@@ -33,7 +46,7 @@ export async function POST(req: Request) {
 
   const message = await prisma.message.create({
     data: {
-      content,
+      content: trimmedContent,
       conversationId,
       senderId: user.id,
     },
