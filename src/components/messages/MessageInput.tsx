@@ -40,7 +40,7 @@ export default function MessageInput({ conversationId }: MessageInputProps) {
   return (
     <form
       onSubmit={sendMessage}
-      className="absolute border-[#e1e1e1] border-l-[0.1em] border-t-[0.1em] bottom-0 left-0 right-0 py-4 bg-background"
+      className="absolute border-[#e1e1e1] border-l-[0.1em] bottom-0 left-0 right-0 pb-4"
     >
       <div className="px-3 flex items-center gap-2">
         <button
@@ -57,7 +57,7 @@ export default function MessageInput({ conversationId }: MessageInputProps) {
           value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder="Type a message..."
-          className="resize-none input-style bg-light-grey placeholder:text-small flex-1 border-[#d3d3d3] py-3"
+          className="resize-none input-style bg-white placeholder:text-small flex-1 border-[#d3d3d3] py-3"
         />
 
         <button

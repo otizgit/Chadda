@@ -29,25 +29,39 @@ export default function MessageBubble({
         isMine ? "justify-end" : "justify-start",
       )}
     >
-      <button className="group-hover:grid hidden w-7 place-items-center rounded-lg">
-        <Icon icon="uis:ellipsis-h" className="text-gray-500 text-[1.3rem]" />
-      </button>
+      {isMine ? (
+        <button className="group-hover:grid hidden w-7 place-items-center rounded-lg">
+          <Icon icon="uis:ellipsis-h" className="text-gray-500 text-[1.3rem]" />
+        </button>
+      ) : null}
 
       <div
         className={clsx(
           "max-w-[50%] relative rounded-lg px-3 py-2 pr-17",
-          isMine ? "bg-primary text-white" : "bg-gray-200 text-black",
+          isMine ? "bg-primary text-white" : "bg-background text-black",
         )}
       >
-        <p className="text-white! text-medium font-medium">{message.content}</p>
+        <p
+          className={`${isMine ? "text-white!" : "text-text-color"} text-medium font-medium`}
+        >
+          {message.content}
+        </p>
 
-        <span className="block absolute bottom-1 right-3 text-[0.62rem] text-[#f3f4f6] text-right">
+        <span
+          className={`block absolute bottom-1 right-3 text-[0.62rem] ${isMine ? "text-[#f3f4f6]" : "text-gray-500"} text-right`}
+        >
           {new Date(message.createdAt).toLocaleTimeString([], {
             hour: "2-digit",
             minute: "2-digit",
           })}
         </span>
       </div>
+
+      {!isMine ? (
+        <button className="group-hover:grid hidden w-7 place-items-center rounded-lg">
+          <Icon icon="uis:ellipsis-h" className="text-gray-500 text-[1.3rem]" />
+        </button>
+      ) : null}
     </div>
   );
 }
