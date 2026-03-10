@@ -42,7 +42,7 @@ export default function MessageBubble({
         )}
       >
         <p
-          className={`${isMine ? "text-white!" : "text-text-color"} text-medium font-medium`}
+          className={`${isMine ? "text-white!" : "text-text-color"} text-medium`}
         >
           {message.content}
         </p>

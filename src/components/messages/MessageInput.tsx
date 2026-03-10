@@ -40,7 +40,7 @@ export default function MessageInput({ conversationId }: MessageInputProps) {
   return (
     <form
       onSubmit={sendMessage}
-      className="absolute border-[#e1e1e1] border-l-[0.1em] bottom-0 left-0 right-0 pb-4"
+      className="absolute border-[#e1e1e1] border-t-[0.1em] border-l-[0.1em] bottom-0 left-0 right-0 pb-4 pt-3"
     >
       <div className="px-3 flex items-center gap-2">
         <button
